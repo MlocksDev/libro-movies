@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { AppMaterialModule } from '../app-material.module';
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -13,7 +14,8 @@ import { MoviesDetailsComponent } from './movies-details/movies-details.componen
   ],
   imports: [
     CommonModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }
