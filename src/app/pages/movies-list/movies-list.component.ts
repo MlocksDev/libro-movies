@@ -1,26 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
+import { MoviesService } from 'src/app/services/movies.service';
 
-export interface PeriodicElement {
+export interface Movie {
+  id: number,
   cover: string;
   title: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-  { cover: 'https://avatars.githubusercontent.com/u/89785887?v=4', title: 'Gorduxa' },
-];
-
-/**
- * @title Basic use of `<table mat-table>`
- */
 
 @Component({
   selector: 'app-movies-list',
@@ -29,14 +15,47 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MoviesListComponent implements OnInit {
 
-  displayedColumns: string[] = ['cover', 'title'];
-  dataSource = ELEMENT_DATA;
+  public tableColumns: string[] = ['cover', 'title'];
+  public tableRows: Movie[] = [];
+  @ViewChild(MatTable) table: any;
 
   public now: Date = new Date();
 
-  constructor() { }
+  constructor(
+    private moviesService: MoviesService
+  ) { }
 
   ngOnInit(): void {
+    this.loadTableRows();
   }
+
+  private loadTableRows(): void {
+
+    // Fetch movies date from the API
+    this.moviesService.getMovies().subscribe(response => {
+
+      const results: [] = response.results;
+
+      if (results) {
+
+        results.forEach((result: any) => {
+
+          // Create movie object
+          const movie: Movie = {
+            id: result.id,
+            cover: `https://image.tmdb.org/t/p/original/${result.poster_path}`,
+            title: result.title
+          };
+
+          // Add row to table
+          this.tableRows.push(movie);
+        });
+
+        // Update table
+        this.table.renderRows();
+      }
+    });
+  }
+
 
 }
