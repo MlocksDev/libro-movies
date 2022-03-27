@@ -24,6 +24,9 @@
 export interface Movie {
 
     id: number;
+    icon?: string;
     cover: string;
     title: string;
+    overview?: string;
+    vote_average?: number;
 }

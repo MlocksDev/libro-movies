@@ -2,10 +2,23 @@
 
 <mat-drawer-container>
     <mat-drawer-content>
-        <!-- MAIN CONTENT -->
-        <p> {{movie?.id}}</p>
-        <p> {{movie?.title}}</p>
-        <p><img src="{{movie?.cover}}" alt="" srcset=""></p>
+        <!-- CONTENT -->
+        <div class="card-container">
+            <mat-card class="movie-card">
+                <mat-card-header>
+                    <div mat-card-avatar
+                        [ngStyle]="{'background-image': 'url('+movie.icon+')', 'background-size': 'cover'}">
+                    </div>
+                    <mat-card-title>Code: {{movie?.id}}</mat-card-title>
+                    <mat-card-subtitle>Title: {{movie?.title}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image [src]="movie.cover" [alt]="movie.title">
+                <mat-card-content>
+                    <p><u>Overview:</u> {{movie?.overview}}</p>
+                    <p><u>Rating:</u> {{movie?.vote_average}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
         <!-- ./END -->
     </mat-drawer-content>
 </mat-drawer-container>

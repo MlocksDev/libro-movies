@@ -39,7 +39,7 @@ export class MoviesService {
 
   public getMovies(): Observable<any> {
 
-    const API_URL = `${this.BASE_URL}discover/movie?sort_by=popularity.desc&${this.API_KEY}`;
+    const API_URL = `${this.BASE_URL}discover/movie?sort_by=popularity.desc&${this.API_KEY}&language=pt-BR`;
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -52,7 +52,7 @@ export class MoviesService {
 
   public getMovie(id: number): Observable<any> {
 
-    const API_URL = `${this.BASE_URL}movie/${id}?${this.API_KEY}`;
+    const API_URL = `${this.BASE_URL}movie/${id}?${this.API_KEY}&language=pt-BR`;
 
     const httpOptions = {
       headers: new HttpHeaders({

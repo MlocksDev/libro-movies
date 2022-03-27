@@ -52,8 +52,11 @@ export class MoviesDetailsComponent implements OnInit {
       console.log(result);
       this.movie = {
         id: result.id,
+        icon: `https://image.tmdb.org/t/p/original/${result.backdrop_path}`,
         cover: `https://image.tmdb.org/t/p/original/${result.poster_path}`,
-        title: result.title
+        title: result.title,
+        overview: result.overview,
+        vote_average: result.vote_average
       };
     });
   }

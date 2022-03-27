@@ -1,3 +1,5 @@
-ul li {
-  list-style: none;
+a {
+  outline: none;
+  color: white;
+  text-decoration: none;
 }
