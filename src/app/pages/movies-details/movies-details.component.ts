@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesDetailsComponent implements OnInit {
 
   public now: Date = new Date();
+
   constructor() { }
 
   ngOnInit(): void {

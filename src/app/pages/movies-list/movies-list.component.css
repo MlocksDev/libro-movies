@@ -1,3 +1,21 @@
-footer {
-  padding: 20px;
+.table-container {
+  margin: 1rem;
+}
+
+table {
+  width: 100%;
+  margin: 1rem;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.mat-column-cover {
+  width: 20%;
+}
+
+.mat-column-title {
+  text-align: center;
 }
