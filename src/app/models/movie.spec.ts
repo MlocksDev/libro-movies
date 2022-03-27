@@ -21,28 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Movie } from './movie';
 
-import { MoviesListComponent } from './movies-list.component';
-
-describe('MoviesListComponent', () => {
-  let component: MoviesListComponent;
-  let fixture: ComponentFixture<MoviesListComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [MoviesListComponent]
-    })
-      .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MoviesListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+describe('Movie', () => {
+  it('should create an instance', () => {
+    expect(new Movie()).toBeTruthy();
   });
 });

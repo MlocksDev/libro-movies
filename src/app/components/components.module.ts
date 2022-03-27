@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppMaterialModule } from '../app-material.module';
-
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,6 +12,7 @@ import { AppMaterialModule } from '../app-material.module';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     AppMaterialModule
   ],
   exports: [
