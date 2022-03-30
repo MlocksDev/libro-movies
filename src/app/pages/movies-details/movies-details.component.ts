@@ -49,7 +49,6 @@ export class MoviesDetailsComponent implements OnInit {
     const id: any = this.route.snapshot.paramMap.get('id');
 
     this.moviesService.getMovie(id).subscribe((result: any) => {
-      console.log(result);
       this.movie = {
         id: result.id,
         icon: `https://image.tmdb.org/t/p/original/${result.backdrop_path}`,
