@@ -1,8 +1,31 @@
-# LibroMovies
-
-Technical Assessment Front-end Developer
+# LibroMovies - Technical Assessment Front-end Developer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+
+This project consists of building **LibroMovies**, a simple web application that has a catalog of the most popular films.
+
+This application has only 2 pages.
+
+### Pages
+
+_Page 1 - List of movies_
+
+This screen consists of displaying a list of movies with at least: - Film cover - Movie title
+
+_Page 2 - Film Detailing_
+
+This screen consists of the movie detail after selecting a movie from screen 1​.
+Consider for this screen the use of the greatest possible amount of
+information.
+
+## Requirements
+
+- Implementation of movie listing functionality
+- Implementing a movie detail functionality
+- Using @angular​ in its version 2 or higher
+- Using @angular/material
+- Use of The Movie Database web service for listing, detailing and/or any other non-mandatory features
+- Use of responsiveness to ensure visualization nice also on mobile devices
 
 ## Install Dependencies
 
